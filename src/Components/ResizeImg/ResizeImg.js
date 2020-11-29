@@ -52,7 +52,7 @@ function ResizeImg() {
           <p>
             {!fileURI
               ? "No file chosen for upload"
-              : `File name ${fileName}, file size:${returnFileSize(
+              : `File name ${fileName}, file size >>> ${returnFileSize(
                   fileURI.size
                 )}`}
           </p>
