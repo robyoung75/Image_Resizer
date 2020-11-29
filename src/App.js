@@ -1,5 +1,6 @@
 import "./App.css";
 import OrigImg from "./Components/OrigImg/OrigImg";
+import ResizeImg from "./Components/ResizeImg/ResizeImg";
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
         <h3>Image Resizer</h3>
       </header>
       <OrigImg />
+      <ResizeImg />
     </div>
   );
 }
