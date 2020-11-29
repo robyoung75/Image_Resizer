@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <h3>Image Resizer</h3>
       </header>
-      <OrigImg />
+      {/* <OrigImg /> */}
       <ResizeImg />
     </div>
   );

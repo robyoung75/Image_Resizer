@@ -1,0 +1,51 @@
+.resizeImg {
+  display: flex;
+  /* background-color: lightblue; */
+  padding: 1rem;
+}
+
+.resizeImg > form {
+  display: flex;
+  flex-direction: column;
+  /* background-color: lightcoral; */
+  padding: 1rem;
+  width: 50%;
+}
+
+.resizeImg > form > label {
+  display: flex;
+  border: 0.1rem solid black;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+input[type="file"] {
+  opacity: 0;
+  z-index: -1; /* move under anything else */
+  position: absolute; /* don't let it take up space */
+}
+
+.resizeImg__preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1rem solid black;
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+
+.resizeImg__previewImg {
+  width: 4rem;
+  height: auto;
+}
+
+.resizeImg__btn {
+  display: flex;
+  justify-content: center;
+}
+
+.resizeImg__btn > button {
+  width: 33%;
+  height: 2rem;
+}
