@@ -5,11 +5,11 @@ import ResizeImg from "./Components/ResizeImg/ResizeImg";
 function App() {
   
   return (
-    <div className="App">
-      <header className="App-header">
-        <h3>Image Resizer</h3>
+    <div className="app">
+      <header className="app__header">
+        <h1>Image Resizer</h1>
       </header>
-      {/* <OrigImg /> */}
+      <OrigImg />
       <ResizeImg />
     </div>
   );

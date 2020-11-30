@@ -1,11 +1,16 @@
-.resizeImg {
+.origImg {
   display: flex;
   flex-direction: column;
   /* background-color: lightblue; */
   padding: 1rem;
 }
 
-.resizeImg > form {
+.origImg > h3 {
+  text-align: center;
+}
+
+
+.origImg > form {
   display: flex;
   flex-direction: column;
   /* background-color: lightcoral; */
@@ -13,7 +18,7 @@
   width: 50%;
 }
 
-.resizeImg > form > label {
+.origImg > form > label {
   display: flex;
   border: 0.1rem solid black;
   border-radius: 0.25rem;
@@ -22,34 +27,33 @@
   /* color: red; */
 }
 
-.resizeImg__input{
+.origImg__input {
   opacity: 0;
   z-index: -1; /* move under anything else */
   position: absolute; /* don't let it take up space */
 }
 
-.resizeImg__preview {
+.origImg__preview {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 0.1rem solid black;
   margin: 1rem 0;
   padding-left: 1rem;
-  /* color: blue; */
+  
 }
 
-.resizeImg__previewImg {
-
+.origImg__previewImg {
   width: 4rem;
   height: auto;
 }
 
-.resizeImg__btn {
+.origImg__btn {
   display: flex;
   justify-content: center;
 }
 
-.resizeImg__btn > button {
+.origImg__btn > button {
   width: 33%;
   height: 2rem;
 }

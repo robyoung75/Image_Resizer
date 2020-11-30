@@ -46,8 +46,17 @@ function ResizeImg() {
   return (
     <div className="resizeImg">
       <form action="post" encType="multipart/form-data">
-        <label htmlFor="file">Choose an Image to upload (.JPG, JPEG)</label>
-        <input type="file" id="file" name="file" onChange={handleInput} />
+      <h3>Reduced File Size Uploader</h3>
+        <label htmlFor="resizeImg__input">
+          Choose an Image to upload (.JPG, JPEG)
+        </label>
+        <input
+          className="resizeImg__input"
+          type="file"
+          id="resizeImg__input"
+          name="resizeImg__file"
+          onChange={handleInput}
+        />
         <div className="resizeImg__preview">
           <p>
             {!fileURI

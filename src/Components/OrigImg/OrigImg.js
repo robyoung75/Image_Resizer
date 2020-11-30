@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
+import "./OrigImg.css";
 function OrigImg() {
   // state for the files object set by handleInput
   const [originalFileList, setOrignalFileList] = useState();
   // state to set the file url set by handleInput
   const [originalFileURL, setOriginalFileURL] = useState();
-  const [originalFileSize, setOriginalFileSize] = useState();
-  const [originalFileName, setOriginalFileName] = useState();
-  const [originalFileType, setOriginalFileType] = useState();
 
   const returnFileSize = (number) => {
     if (number < 1024) {
@@ -19,11 +16,7 @@ function OrigImg() {
     }
   };
 
-  const handleInput = async (e) => {
-    e.preventDefault();
-    setOriginalFileSize(e.target.files[0].size);
-    setOriginalFileName(e.target.files[0].name);
-    setOriginalFileType(e.target.files[0].type);
+  const handleOriginalInput = async (e) => {
     const file = e.target.files[0];
     setOrignalFileList(file);
     setOriginalFileURL({ file: URL.createObjectURL(file) });
@@ -32,20 +25,37 @@ function OrigImg() {
   return (
     <div className="origImg">
       <form action="post" encType="multipart/form-data">
-        <label htmlFor="file">Choose file to upload</label>
-        <input type="file" id="file" name="file" onChange={handleInput} />
-      </form>
-      <div className="origImg__btn">
-        <button>Submit</button>
-      </div>
+        <h3>Original File Size Uploader</h3>
+        <label htmlFor="origImg__input">
+          {" "}
+          Choose an Image to upload (.JPG, JPEG)
+        </label>
+        <input
+          className="origImg__input"
+          type="file"
+          id="origImg__input"
+          name="origImg__input"
+          onChange={handleOriginalInput}
+        />
 
-      {/* conditional rendering of the image */}
-      {!originalFileURL ? null : (
-        <div>
-          <img src={originalFileURL.file} width="600" height="auto"/>
-          <p>{returnFileSize(originalFileSize)}</p>
+        <div className="origImg__preview">
+          <p>
+            {!originalFileList
+              ? "No file chosen for upload"
+              : `File name ${
+                  originalFileList.name
+                }, file size >>> ${returnFileSize(originalFileList.size)}`}
+          </p>
+          {/* conditional rendering of the image */}
+          {!originalFileURL ? null : (
+            <img className="origImg__previewImg" src={originalFileURL.file} />
+          )}
         </div>
-      )}
+
+        <div className="origImg__btn">
+          <button>Submit</button>
+        </div>
+      </form>
     </div>
   );
 }
